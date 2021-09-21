@@ -107,11 +107,12 @@ if(isset($_POST['Update']))
 	 }
 	}
 	else{
-	echo "result is empty"
+	echo "result is empty";
 	}
 	
 
-	mysqli_query($con,"insert into message values('','$message','$date','$status','$mail','','$sesuser')");
+	$sql="insert into message values(default,'$message','$date','$status','$mail','','$sesuser')";
+	$con->query($sql);
 	mysqli_close($con);
 
 	// Mail Send Code
