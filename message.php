@@ -92,31 +92,36 @@ if(isset($_POST['Update']))
 	include('comman/connect.php');
 
 	if($status=="All"){
-		$sql="select email from account1";
+		$sql="select Email from registration";
 		$res=$con->query($sql);
 	}
 	else{
-		$sql="select email from account1 where status='$status'";
+		$sql="select Email from registration";
 		$res=$con->query($sql);
 	}
 	
 	$mail=0;
-	while($row=mysqli_fetch_array($res))
-	{	
-		$mail++;
+	if($res){
+	 while ($row = mysqli_fetch_array($res)) {
+	  $mail++;
+	 }
 	}
+	else{
+	echo "result is empty"
+	}
+	
 
 	mysqli_query($con,"insert into message values('','$message','$date','$status','$mail','','$sesuser')");
 	mysqli_close($con);
 
 	// Mail Send Code
-	$to='santoo.gaya@gmail.com';
-	$subject = "BPC Message";
+	$to='kapil.kr909@gmail.com';
+	$subject = "NIT Jamshedpur Message";
 
 	$htmlContent = '
 		<html>
 			<head>
-				<title>Welcome to BPC</title>
+				<title>Welcome to NIT Jamshedpur</title>
 				<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 			</head>
 			<body style="font-family:sans-serif;">
@@ -138,7 +143,7 @@ if(isset($_POST['Update']))
 	$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
 	// Additional headers
-	$headers .= 'From: BPC Gaya<bpcgaya@gmail.com>' . "\r\n";
+	$headers .= 'From: NIT Jamshedpur<kapil.kr909@gmail.com>' . "\r\n";
 
 	// Send email	
 	//mail($to,$subject,$htmlContent,$headers);
