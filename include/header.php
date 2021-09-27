@@ -76,11 +76,11 @@
         { ?>
           <li class="tabOuter" class="dropdown"><a class="borderOuter" class="dropdown-toggle" data-toggle="dropdown" href="#"><?php echo $data['Name'];?><span class="caret"></span></a>
           <ul class="dropdown-menu">
-          <li><a href="profile">Profile</a></li>  
-          <li><a href="editprofile">Edit Profile</a></li>
-          <li><a href="changeimage">Change Image</a></li>  
-          <li><a href="changepsw">Change PSW</a></li>
-          <li><a href="logout">Log Out</a></li>
+          <li><a href="profile.php">Profile</a></li>  
+          <li><a href="editprofile.php">Edit Profile</a></li>
+          <li><a href="changeimage.php">Change Image</a></li>  
+          <li><a href="changepsw.php">Change PSW</a></li>
+          <li><a href="logout.php">Log Out</a></li>
       </ul>
       </li>
         <?php }
