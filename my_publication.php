@@ -124,23 +124,30 @@ else
 	<div class="row">
 		<table class="table table2" border="1">
 			<tr class="tr">
-				<td>Publication Id</td>
-				<td>Publication name</td>
-				<td>Subject</td>
-				<td>Type</td>
-				<td>Description</td>
+				<td width="10">Publication Id</td>
+				<td width="20">Publication name</td>
+				<td width="10">Subject</td>
+				<td width="10">Type</td>
+				<td width="30">Description</td>
 				<td>Date</td>
-				<td>File Uploaded</td>
+				<td style="object-fit: cover;position: absolute;">File Uploaded</td>
 			</tr>
-			<tr>
-				<td>hee</td>
-				<td>hhh</td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-			</tr>
+			<?php 
+            $res=$con->query("select publication_id,thesis_title,subject,thesis_types,description,date_upload,file_uploaded from publication");
+                $i=1;
+                while($row=mysqli_fetch_array($res))
+                {
+                    echo "<tr>";
+                        echo "<td>".$row['publication_id']."</td>";
+                        echo "<td>".$row['thesis_title']."</td>";
+                        echo "<td align='center'>".$row['subject']."</td>";
+                        echo "<td align='center'>".$row['thesis_types']."</td>";
+                        echo "<td align='center'>".$row['description']."</td>";
+                        echo "<td align='center'>".$row['date_upload']."</td>";
+                        echo "<td align='center'>".$row['file_uploaded']."</td>";
+                    echo "</tr>";
+                }
+             ?>
 		</table>
 	</div>
 </div>
