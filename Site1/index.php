@@ -1,4 +1,8 @@
-
+<?php
+include("../include/header.php");
+include("../comman/connect.php");
+include("../include/main.php");
+?>
 <html style="font-size: 16px;">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -144,3 +148,6 @@ c0-7.4,3.4-18.8,18.8-18.8h13.8v15.4H75.5z"></path></svg></span>
    
   </body>
 </html>
+<?php
+include("../include/footerstrip.php");
+?>

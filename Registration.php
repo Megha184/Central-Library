@@ -9,7 +9,7 @@ include('include/header.php');
 
 <?php  
 // define variables to empty values  
-$nameErr = $branchErr = $typeErr = $passSameErr =  $passErr = $otpErr =  $regError="";  
+$nameErr = $branchErr = $typeErr = $passSameErr =  $passErr = $otpErr =  $regError= $phError = "";  
 
    
 //Input fields validation  
@@ -48,8 +48,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       } else {  
               $branch = ($_POST["branch"]);  
       }
-      
-      
+      $gender = $_POST['gender'];
+      $genderError="";
+    if(empty($_POST["phno"])){
+      $phError = "Phone Number is missing";
+    }
+      else{
+        $phno = ($_POST["phno"]);
+      }
     
       
     //Password and Confirm Password equal or not
@@ -185,6 +191,23 @@ form, .content {
   	  <label>Registration Number<span class="error">* <?php echo $regError; ?></label>
   	  <input type="text" name="regno" placeholder="Enter Registration Number Here" >
   	</div>
+
+    <div class="input-group">
+      <label>Phone Number<span class="error">* <?php echo $phError; ?></label>
+      +91  <input style="width:93%;" type="text" name="phno" placeholder="Enter Phone Number Here" maxlength="10">
+
+  </div>
+  <div class="input-group">
+      <label>Gender<span class="error"></label>
+      <select name ="gender">
+        <option value="F">Female</option>
+        <option value='M'>Male</option>
+        <option value='O'>Others</option>
+  </select>
+      <!-- <input type="text" name="gender" placeholder="Enter Gender Here" > -->
+
+
+  </div>
     <div class="input-group">
       
   	   <label for="branch">Branch<span class="error">* <?php echo $branchErr; ?> </span>  </label>
@@ -226,7 +249,7 @@ if(isset($_POST['register']))
         $query1 = "SELECT * FROM `registration` WHERE `Email` = '$email'";
         $result1 = mysqli_query($con,$query1);
         if($result1->num_rows==0){
-          $query = "INSERT INTO `registration` (`UserId`, `Name`, `Email`, `Password`, `Confirmpassword`, `Type`, `Branch`, `Regno`) VALUES (default,'$name','$email','$password','$cpassword','$type','$branch','$regno')";
+          $query = "INSERT INTO `registration` (`UserId`, `Name`, `Email`, `MobileNo`,`Gender`,`Password`, `Confirmpassword`, `Type`, `Branch`, `Regno`) VALUES (default,'$name','$email','$phno','$gender','$password','$cpassword','$type','$branch','$regno')";
           $result = mysqli_query($con,$query);
           echo "<script>alert('Registration Successful')</script>";
           echo '<script language="javascript">window.location="SignIn.php";</script>';
