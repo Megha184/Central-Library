@@ -71,7 +71,7 @@ include("include/header.php");
         margin-top: 30px;
       }
       .imageMagazines {
-        width: 230px;
+        width: 200px;
         height: 280px;
       }
       .textMagazine {

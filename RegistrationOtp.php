@@ -87,10 +87,20 @@ $success = "";
 $error_message = "";
 if(isset($_POST['send']))
 {
+
+        $newEmail = $_POST['email'];
+        $res=mysqli_fetch_array($con->query("select Email from registration where Email='$newEmail'"));
+        if($res != null)
+        {
+          echo "<script>alert('Email Already exist');</script>";
+          echo"<script>window.location.href='SignIn.php';</script>";
+        }
+        else{
         $allowedDomains = array('nitjsr.ac.in');
         list($user, $domain) = explode('@', $_POST['email']);
-        if (checkdnsrr($domain, 'MX') && in_array($domain, $allowedDomains))
-        {
+        if($allowedDomains[0] == $domain){
+       // if (checkdnsrr($domain, 'MX') && in_array($domain, $allowedDomains))
+        //{
             $email = $_POST['email'];
              $otp = rand(100000,999999);
                 $to = $_POST['email'];
@@ -102,10 +112,10 @@ if(isset($_POST['send']))
                     $current_id = mysqli_insert_id($con);
                     echo "<script>alert('Email Sent');</script>";
                     ?>
-                    <script>
+                      <script>
                       document.getElementById('emailid').style.visibility = 'hidden';
                      document.getElementById('sendid').style.visibility = 'hidden';
-                    </script>
+                      </script>
                <?php }
             else {
                echo "<script>alert('Email Does Not Exists');</script>";
@@ -117,6 +127,7 @@ if(isset($_POST['send']))
             echo "<script>alert('Use Institute Email ID');</script>";
         }
        
+}
 }
 
 

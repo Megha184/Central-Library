@@ -32,23 +32,6 @@ $data=mysqli_fetch_array($con->query("select * from registration where email='$u
 <link href="https://fonts.googleapis.com/css2?family=Girassol&display=swap" rel="stylesheet">
 </head>
 <body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!--footer-->
 
 
