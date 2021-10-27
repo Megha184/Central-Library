@@ -175,13 +175,14 @@ include("include/header.php");
         </div>
       </div>
       <div class="project">
-        <img src="image/thesis1.jpg" alt="" class="project-image" />
+        <img src="image/thesis1.jpg" alt="" class="project-image" style="height:80%"/>
         <div class="grid-overlay">
+          <a href="thesis.php">
           <button
             onclick="window.location.href='Overlap.html';"
             class="viewbutton"
           >
-            <a href="thesis.php">Thesis</a>
+            Thesis
           </button>
         </div>
       </div>
