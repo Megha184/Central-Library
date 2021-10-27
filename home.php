@@ -8,26 +8,20 @@ include('comman/connect.php');
 $sql="select * from registration where email='$sesuser'";
 $result = mysqli_query($con,$sql);
 $data=mysqli_fetch_array($result);
-    
-
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-<<<<<<< HEAD
-	<title>:: NIT jsr</title>
-=======
-	<title>:: BPC</title>
->>>>>>> origin/master
+	<title>:: Admin NIT jsr</title>
 	<link rel="stylesheet" type="text/css" href="css/style1.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+
 </head>
 <body>
-
 <?php include('comman/menu.php');?>
-
 <div class="main">
 	<div class="profile">
 		<div class="profilebox">
@@ -63,17 +57,13 @@ $data=mysqli_fetch_array($result);
 			<div class="one"><i class="fa fa-user-plus"></i></div>
 			<div class="two">
 				<?php
-<<<<<<< HEAD
+
                    $u=$con->query("select * from registration");
                    echo $uu=mysqli_num_rows($u);
-=======
-                 //  $u=$con->query("select * from account1");
-                 //  echo $uu=mysqli_num_rows($u);
->>>>>>> origin/master
                 ?>
 			</div>
 			<div class="three">Users</div>
-			<div class="four"><b>BPC</b> Students (Passed Or Going)</div>
+			<div class="four"><b>Nit Jsr</b> Students (Passed Or Going)</div>
 			<div class="clear"></div>
 			</a>
 		</div>
@@ -82,13 +72,8 @@ $data=mysqli_fetch_array($result);
 			<div class="one"><i class="fa fa-user-plus"></i></div>
 			<div class="two">
 				<?php
-<<<<<<< HEAD
                    $u=$con->query("select * from registration ");
                    echo $uu=mysqli_num_rows($u);
-=======
-                //   $u=$con->query("select * from account1 where status='YES'");
-                //   echo $uu=mysqli_num_rows($u);
->>>>>>> origin/master
                 ?>
 			</div>
 			<div class="three">Users</div>
@@ -101,8 +86,8 @@ $data=mysqli_fetch_array($result);
 			<div class="one"><i class="fa fa-file-audio-o"></i></div>
 			<div class="two">
 				<?php
-                 //  $n=$con->query("select * from news");
-                 //  echo $ns=mysqli_num_rows($n);
+                   $n=$con->query("select * from news");
+                   echo $ns=mysqli_num_rows($n);
                 ?>
 			</div>
 			<div class="three">News</div>

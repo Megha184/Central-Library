@@ -34,7 +34,7 @@
       </li>
 <li class="tabOuter" class="dropdown"><a class="borderOuter" class="dropdown-toggle" data-toggle="dropdown" href="#">Services<span class="caret"></span></a>
         <ul class="dropdown-menu">
-            <li><a class="borderInner" href="#check">Facilities</a></li>
+            <li><a class="borderInner" href="index.php#check">Facilities</a></li>
  <li><a class="borderInner" href="https://nitjsr.irins.org/">Faculty Profiles</a></li>
           <li><a class="borderInner" href="feedbacks.php">Feedback</a></li>
           <li><a class="borderInner" href="bookbank.php">Book Bank</a></li>
@@ -45,32 +45,46 @@
 <li class="tabOuter" class="dropdown"><a class="borderOuter" class="dropdown-toggle" data-toggle="dropdown" href="#">Resources<span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a class="borderInner" href="Ebook.php">E-TextBooks</a></li>
-          <li><a class="borderInner" href="">Online-Journals</a></li>
+          <li><a class="borderInner" href="OnlineJournal.php">Online-Journals</a></li>
           <li><a  href="Magazines.php">Magazines</a></li>
   
         </ul>
       </li>
+<li class="tabOuter" class="dropdown"><a class="borderOuter"  href="Site1/index.php">Contributors</a></li>
       </ul>
       
    <ul class="nav navbar-nav navbar-right">
-      <li class="tabOuter" class="dropdown"><a class="borderOuter" href="Registration.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a>
-          <!-- <ul class="dropdown-menu">
-          <li><a class="borderInner" href="#">Admin</a></li>
-          <li><a  href="#">Student</a></li>
-          </ul> -->
-          </li>
-          <li class="tabOuter" class="dropdown"><a class="borderOuter"  href="SignIn.php"><span class="glyphicon glyphicon-log-in"></span> Login </a>
-          <!-- <ul class="dropdown-menu">
-          <li><a class="borderInner" href="#">Admin</a></li>
-          <li><a  href="#">Student</a></li>
-          </ul> -->
-          </li>
-     <!--<li class="dropdown"><a  class="dropdown-toggle" data-toggle="dropdowm" href="#"><span class="glyphicon glyphicon-log-in" class="caret"></span> Login</a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Admin</a></li>
-          <li><a href="#">Student</a></li>
-          </ul>
-          </li>-->
+      
+      <?php
+        if(!$user_ses)
+        { ?>
+          <li class="tabOuter" class="dropdown"><a class="borderOuter" href="RegistrationOtp.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a>
+      <!-- <ul class="dropdown-menu">
+      <li><a class="borderInner" href="#">Admin</a></li>
+      <li><a  href="#">Student</a></li>
+      </ul> -->
+      </li>
+      <li class="tabOuter" class="dropdown"><a class="borderOuter"  href="SignIn.php"><span class="glyphicon glyphicon-log-in"></span> Login </a>
+      <!-- <ul class="dropdown-menu">
+      <li><a class="borderInner" href="#">Admin</a></li>
+      <li><a  href="#">Student</a></li>
+      </ul> -->
+      </li>
+        <?php
+         }
+        else
+        { ?>
+          <li class="tabOuter" class="dropdown"><a class="borderOuter" class="dropdown-toggle" data-toggle="dropdown" href="#"><?php echo $data['Name'];?><span class="caret"></span></a>
+          <ul class="dropdown-menu">
+          <li><a href="profile.php">Profile</a></li>  
+          <li><a href="editprofile.php">Edit Profile</a></li>
+          <li><a href="changeimage.php">Change Image</a></li>  
+          <li><a href="changepsw.php">Change PSW</a></li>
+          <li><a href="logout.php">Log Out</a></li>
+      </ul>
+      </li>
+        <?php }
+        ?>
     </ul>
   </div>
 </nav>

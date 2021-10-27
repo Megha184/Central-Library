@@ -1,8 +1,35 @@
-<?php require('comman/connect.php'); ?>
-
-<?php
+<?php require('comman/connect.php'); 
+ob_start();
 include('include/main.php');
 include('include/header.php');
+if(isset($_POST['sig_user']))
+{
+    extract($_POST);
+    $data=mysqli_fetch_array($con->query("select * from registration where email='$email'"));
+    if($data){
+      if(password_verify($password, $data['Password'])){
+        if($data['Type']=='Admin'){
+          @session_start();
+          $_SESSION['sesuser']=$_POST['email'];
+          echo "<script>alert('Login Successful')</script>";
+          header('location:home.php');
+        }
+        else{
+          @session_start();
+          $_SESSION['user']=$_POST['email'];
+          echo "<script>alert('Login Successful')</script>";
+          header('location:index.php');
+        }
+       }
+       else{
+         echo "<script>alert('Wrong Password')</script>";
+       }
+    }
+    else{
+      echo "<script>alert('User not registered')</script>";
+    }
+}
+   
 ?>
 <style>
     form, .content {
@@ -68,24 +95,10 @@ include('include/header.php');
   	  <button type="submit" class="btn" name="sig_user">Sign In</button>
   	</div>
   	<p style = "margin-left:70px">
-        Register ? <a href="Registration.php">Sign Up</a>
+        Register ? <a href="RegistrationOtp.php">Sign Up</a>
   	</p>
   </form>
 </div>
-  <?php
-if(isset($_POST['sig_user']))
-{
-
-    extract($_POST);
-    $query = "SELECT * FROM `registration` WHERE Email = '$email' and Password ='$password'"; ;
-    $result = mysqli_query($con,$query);
-    if($result){
-        echo "<script>alert('Login Successful')</script>";
-
-    }
-    else{
-      echo "<script>alert('User not registered')</script>";
-    }
-}
-    include("include/footerstrip.php");
-?>
+<?php
+ include("include/footerstrip.php");
+ ?>

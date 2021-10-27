@@ -5,16 +5,18 @@ if(!$sesuser)
     header("location:logout.php");
 
 include('comman/connect.php');
-$data=mysqli_fetch_array($con->query("select * from user1 where user_id='$sesuser'"));
-
+$sql="select * from registration where email='$sesuser'";
+$result = mysqli_query($con,$sql);
+$data=mysqli_fetch_array($result);
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>:: BPC</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<title>:: Admin NIT jsr</title>
+	<link rel="stylesheet" type="text/css" href="css/style1.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 	<script language="javascript" type="text/javascript">
         window.onload = function () {
@@ -84,7 +86,6 @@ $data=mysqli_fetch_array($con->query("select * from user1 where user_id='$sesuse
 </html>
 
 <?php
-echo "string";
 if(isset($_POST['Upload']))
 {
 	extract($_POST);
@@ -94,6 +95,7 @@ if(isset($_POST['Upload']))
      $con->query("insert into gallery values(DEFAULT,'$imgname','$img')");
 	move_uploaded_file($_FILES['img']['tmp_name'], "gallery/".$img);
 	mysqli_close($con);
-	header("location:galleryadd.php");
+	//header("location:galleryadd.php");
+	echo"<script>window.location.href='galleryadd.php';</script>";
 }
 ?>
