@@ -194,7 +194,7 @@ else
 					<a href="my_publication.php"><i class="fa fa-file-text" aria-hidden="true"></i> YOUR THESIS</a>
 				</div>
 				<div class="status">
-					<a href="#"><i class="fa fa-file-text" aria-hidden="true"></i> ALL THESIS</a>
+					<a href="all_publication.php"><i class="fa fa-file-text" aria-hidden="true"></i> ALL THESIS</a>
 				</div>
 
 				<div class="status">

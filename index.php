@@ -181,7 +181,7 @@ include("include/header.php");
             onclick="window.location.href='Overlap.html';"
             class="viewbutton"
           >
-            <a href="Publications/index.html">Thesis</a>
+            <a href="thesis.php">Thesis</a>
           </button>
         </div>
       </div>

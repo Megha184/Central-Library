@@ -136,12 +136,8 @@ else
 			</tr>
 			<?php 
             
-        $res1=$con->query("select Regno from registration where Email='$user_ses'");
-        while($row=mysqli_fetch_array($res1))
-        {
-                $reg=$row['Regno'];
 
-            $res=$con->query("select publication_id,thesis_title,subject,thesis_types,date_upload,supervisors,year,date_modify from publication where reg_no='$reg'");
+            $res=$con->query("select publication_id,thesis_title,subject,thesis_types,date_upload,supervisors,year,date_modify from publication");
                 $i=1;
                 while($row=mysqli_fetch_array($res))
                 {
@@ -158,8 +154,6 @@ else
                         echo "<td align='center'><a href='delete.php?id=".$id."&&tname=news'>view</a></td>";
                     echo "</tr>";
                 }
-        }
-			
              ?>
 		</table>
 	</div>
