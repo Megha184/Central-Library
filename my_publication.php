@@ -159,6 +159,7 @@ else
                     echo "</tr>";
                 }
         }
+			
              ?>
 		</table>
 	</div>
