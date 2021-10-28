@@ -41,6 +41,12 @@ $data=mysqli_fetch_array($con->query("select * from registration where email='$s
 					</select></td>
 				</tr>
 				<tr>
+				
+						<label for="name">File Upload<p style="color:red;float: right;padding-left: 20px; margin: 0px;">file name without special characters and space</p></label>
+						<input type="file" class="form-control input" accept="application/pdf" name="file" placeholder="Enter File Upload..." required value="">
+					
+</tr>
+				<tr>
 					<td></td>
 					<td><input type="submit" name="Update" value="Update"></td>
 				</tr>
@@ -107,4 +113,24 @@ if(isset($_POST['Update']))
 
 </script>
 
-<?php } ?>
+<?php } 
+if(isset($_POST['Update']))
+{
+	extract($_POST);
+	$date=date('d-M-Y');
+	if(!$_FILES['file']['name'])
+	$apic="";
+	else{
+	$apic=rand().$_FILES['file']['name'];
+	move_uploaded_file($_FILES['file']['tmp_name'], "Publications/".$apic)
+	or die ("Error!!");
+	}
+	$sql="insert into publication values(default,'$regno','$name','$department','$Branch','$subject','$supervisors','$Description','$thesis','$apic','$toyear','$date','$date')";
+	$con->query($sql);
+	//header("location:profile.php");
+	//echo"<script>window.location.href='upload_publication.php';</script>"; 				
+}
+
+
+
+?>

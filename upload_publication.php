@@ -2,8 +2,8 @@
 include('comman/connect.php');
 include('include/main.php');
 include('include/header.php');
-if(isset($_SESSION['user'])){
-    $user_ses=$_SESSION['user'];
+if(isset($_SESSION['sesuser'])){
+    $user_ses=$_SESSION['sesuser'];
 }
 else
 {
@@ -139,9 +139,10 @@ else
 						<input type="text" class="form-control input" name="regno" placeholder="Enter Registration Number..." required value="" minlength="12" maxlength="12">
 					</div>
 					<div class="form-group col-sm-6">
-						<label for="name">Author Name</label>
-						<input type="text" class="form-control input" name="name" placeholder="Enter Author Name..." required value="">
+						<label for="name">Thesis Title</label>
+						<input type="text" class="form-control input" name="name" placeholder="Enter Thesis Name..." required value="">
 					</div>
+					
 				</div>
 				<div class="row">
 					<div class="form-group col-sm-6">
@@ -154,6 +155,18 @@ else
 							<option value="PhD">PhD</option>
 						</select>
 					</div>
+					<div class="form-group col-sm-6">
+						<label for="name">Author Name</label>
+						<input type="text" class="form-control input" name="name" placeholder="Enter Author Name..." required value="">
+					</div>
+					
+				</div>
+				<div class="row">
+					<div class="form-group col-sm-6">
+						<label for="name">Subject</label>
+						<input type="text" class="form-control input" name="subject" placeholder="Enter Subject..." required value="">
+					</div>
+					
 					<div class="form-group col-sm-6">
 						<label for="name">Branch</label>
 						<select class="form-control input" name="Branch" required>
@@ -174,23 +187,14 @@ else
 				</div>
 				<div class="row">
 					<div class="form-group col-sm-6">
-						<label for="name">Subject</label>
-						<input type="text" class="form-control input" name="subject" placeholder="Enter Subject..." required value="">
+						<label for="name">Thesis Types</label>
+						<input type="text" class="form-control input" name="thesis" placeholder="Enter Thesis Types..." required value="">
 					</div>
 					<div class="form-group col-sm-6">
 						<label for="name">Supervisors</label>
 						<input type="text" class="form-control input" name="supervisors" placeholder="Enter Supervisors..." required value="">
 					</div>
-				</div>
-				<div class="row">
-					<div class="form-group col-sm-6">
-						<label for="name">Thesis Types</label>
-						<input type="text" class="form-control input" name="thesis" placeholder="Enter Thesis Types..." required value="">
-					</div>
-					<div class="form-group col-sm-6">
-						<label for="name">File Upload<p style="color:red;float: right;padding-left: 20px; margin: 0px;">file name without special characters and space</p></label>
-						<input type="file" class="form-control input" accept="application/pdf" name="file" placeholder="Enter File Upload..." required value="">
-					</div>
+					
 				</div>
 				<div class="row">
 					<div class="form-group col-sm-6">
@@ -203,6 +207,11 @@ else
 								<?php }
 							?>
 						</select>
+
+					</div>
+					<div class="form-group col-sm-6">
+						<label for="name">File Upload<p style="color:red;float: right;padding-left: 20px; margin: 0px;">file name without special characters and space</p></label>
+						<input type="file" class="form-control input" accept="application/pdf" name="file" placeholder="Enter File Upload..." required value="">
 					</div>
 				</div>
 				<div class="row">

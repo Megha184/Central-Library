@@ -56,14 +56,13 @@ $data=mysqli_fetch_array($result);
 			<a href="subscribeshow.php">
 			<div class="one"><i class="fa fa-user-plus"></i></div>
 			<div class="two">
-				<?php
-
-                   $u=$con->query("select * from registration");
-                   echo $uu=mysqli_num_rows($u);
-                ?>
+			Thesis
+			</div> 
+			<div class="three">
+			<div class="status">
+					<a href="upload_publication.php"><i class="fa fa-file-text" aria-hidden="true"></i> UPLOAD THESIS</a>
+				</div> 
 			</div>
-			<div class="three">Users</div>
-			<div class="four"><b>Nit Jsr</b> Students (Passed Or Going)</div>
 			<div class="clear"></div>
 			</a>
 		</div>
