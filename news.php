@@ -34,18 +34,18 @@ $data=mysqli_fetch_array($con->query("select * from registration where email='$s
 					<td><textarea name="news" required placeholder="Enter News..." minlength="10" maxlength="200"></textarea></td>
 				</tr>
 				<tr>
+				
+				 <td><label for="name">File Upload<p style="color:red;float: right; margin: 0px; font-size: 12px;">file name without special characters and space</p></label></td>
+				 <td><input type="file" class="form-control input" accept="application/pdf" name="file" placeholder="Enter File Upload..." required value=""></td>
+					
+                </tr>
+				<tr>
 					<td width="250" valign="top"><br>Show News</td>
 					<td><select name="status">
 						<option value="YES">YES</option>
 						<option value="NO">NO</option>
 					</select></td>
 				</tr>
-				<tr>
-				
-						<label for="name">File Upload<p style="color:red;float: right;padding-left: 20px; margin: 0px;">file name without special characters and space</p></label>
-						<input type="file" class="form-control input" accept="application/pdf" name="file" placeholder="Enter File Upload..." required value="">
-					
-</tr>
 				<tr>
 					<td></td>
 					<td><input type="submit" name="Update" value="Update"></td>
@@ -85,19 +85,26 @@ $data=mysqli_fetch_array($con->query("select * from registration where email='$s
 </div>
 
 <?php include('comman/footer.php');?>
-</body>
-</html>
+
 
 <?php
 if(isset($_POST['Update']))
 {
-	extract($_POST);
-	include('comman/connect.php');
-    $mail=1;
-	$date=date('d-M-Y');
-	$sql="insert into news values(default,'$news','$status','$date','$mail','','$sesuser')";
+	//include('comman/connect.php');
+	    extract($_POST);
+		$date=date('d-M-Y');
+		/*if(!$_FILES['file']['name'])
+		$apic="";
+	    else{
+		$apic=rand().$_FILES['file']['name'];
+		move_uploaded_file($_FILES['file']['tmp_name'], "Publications/".$apic)
+		or die ("Error!!");
+	    }*/
+	$sql="insert into news values(default,'$news','$status','$date','','','$sesuser')";
 	$con->query($sql);
 	mysqli_close($con);
+
+}
 	//header("location:news.php");
 ?>
 
@@ -112,25 +119,5 @@ if(isset($_POST['Update']))
 	msg.style.margin = "0px 0px 10px 0px";
 
 </script>
-
-<?php } 
-if(isset($_POST['Update']))
-{
-	extract($_POST);
-	$date=date('d-M-Y');
-	if(!$_FILES['file']['name'])
-	$apic="";
-	else{
-	$apic=rand().$_FILES['file']['name'];
-	move_uploaded_file($_FILES['file']['tmp_name'], "Publications/".$apic)
-	or die ("Error!!");
-	}
-	$sql="insert into publication values(default,'$regno','$name','$department','$Branch','$subject','$supervisors','$Description','$thesis','$apic','$toyear','$date','$date')";
-	$con->query($sql);
-	//header("location:profile.php");
-	//echo"<script>window.location.href='upload_publication.php';</script>"; 				
-}
-
-
-
-?>
+</body>
+</html>
