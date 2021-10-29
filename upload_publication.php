@@ -140,7 +140,7 @@ else
 					</div>
 					<div class="form-group col-sm-6">
 						<label for="name">Thesis Title</label>
-						<input type="text" class="form-control input" name="name" placeholder="Enter Thesis Name..." required value="">
+						<input type="text" class="form-control input" name="thesis_title" placeholder="Enter Thesis Name..." required value="">
 					</div>
 					
 				</div>
@@ -257,7 +257,7 @@ else
 		move_uploaded_file($_FILES['file']['tmp_name'], "Publications/".$apic)
 		or die ("Error!!");
 	    }
-		$sql="insert into publication values(default,'$regno','$name','$department','$Branch','$subject','$supervisors','$Description','$thesis','$apic','$toyear','$date','$date')";
+		$sql="insert into publication values(default,'$thesis_title','$regno','$name','$department','$Branch','$subject','$supervisors','$Description','$thesis','$apic','$toyear','$date','$date')";
 		$con->query($sql);
 		//header("location:profile.php");
 		//echo"<script>window.location.href='upload_publication.php';</script>"; 				
