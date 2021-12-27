@@ -69,7 +69,7 @@ include('include/header.php');
             ?>
 
         </div>
-
+      <br>
     </div>
 <?php
  include("include/footerstrip.php");
