@@ -2,6 +2,7 @@
 include('comman/connect.php');
 include('include/main.php');
 include('include/header.php');
+include('include/eThesisBanner.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -25,38 +26,26 @@ include('include/header.php');
     padding: 10px 20px 10px 20px;
     list-style: none;
 }
+
+.box{
+    width:50%;
+    margin:auto;
+    /* display:flex;
+    justify-content: center; */
+}
 </style>
 </head>
 <body>
-    <div class="menu">
-            <ul class="ep_tm_menu"> 
-                <li>
-                    <a href="thesis.php">All</a>
-                </li>
-                <li>
-                    <a href="thesis_year.php">Year</a>
-                </li>
-                <li>
-                    <a href="thesis_subject.php">Subject</a>
-                </li>
-                <li>
-                    <a href="thesis_supervisors.php">Supervisors</a>
-                </li>
-                <li> 
-                    <a href="thesis_type.php">Thesis Type</a>
-                </li>
-            </ul>
-        </div>
-    <div class="container-fluid">
-        
-        
         <div class="container">
             <h2 style="text-align:center;">Browse by Year</h2>
             <p>Please select a value to browse from the list below.</p>
 
+            <div class="box">
+            <ul class="list-group-item">
             <?php 
                 echo "<ul>";
                 $res1=$con->query("select distinct year from publication;");
+                
                 while($row=mysqli_fetch_array($res1))
                 {
                     $reg=$row['year'];
@@ -66,13 +55,16 @@ include('include/header.php');
                 }
                 echo "</ul>";
             ?>
-
+            </ul>
+            </div><br><br>
         </div>
-
-    </div>
+        <div class="footer" style="background-color:#090832;text-align:center;min-height:40px;padding:12px 0px 0px 0px;color:white;
+  bottom: 0;
+  width: 100%;">
 <?php
  include("include/footerstrip.php");
  ?>
+    </div>
 <script type="text/javascript" src="js/bootstrap.js"></script>
 
 </body>

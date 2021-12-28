@@ -9,8 +9,8 @@
 <body>
 <div>
     <center>
-      <img src="image/eThesisBanner.png" alt="eThesis Banner" width="1519" height="200">
-    </center><br>
+      <img src="image/eBannerThesis.jpg" alt="eBannerThesis" width="1519" height="200">
+    </center>
 </div>
 <div class="menu">
             <ul class="ep_tm_menu"> 
@@ -34,6 +34,5 @@
                 </li>
             </ul>
         </div>
-        <br><br><br>
 </body>
 </html>

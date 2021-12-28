@@ -2,6 +2,7 @@
 include('comman/connect.php');
 include('include/main.php');
 include('include/header.php');
+include('include/eThesisBanner.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -13,6 +14,7 @@ include('include/header.php');
 .backbox{margin-bottom: 30px;}
 
 .tr{font-weight: bold; background: #eee;}
+
 .menu{
     width: 100%;
     height: 50px;
@@ -25,36 +27,26 @@ include('include/header.php');
     padding: 10px 20px 10px 20px;
     list-style: none;
 }
+
+.box{
+    width:50%;
+    margin:auto;
+    /* display:flex;
+    justify-content: center; */
+}
+.foot{
+    display: flex;
+}
+
 </style>
 </head>
-<body>
-    <div class="menu">
-            <ul class="ep_tm_menu"> 
-                <li>
-                    <a href="thesis.php">All</a>
-                </li>
-                <li>
-                    <a href="thesis_year.php">Year</a>
-                </li>
-                <li>
-                    <a href="thesis_subject.php">Subject</a>
-                </li>
-                <li>
-                    <a href="thesis_supervisors.php">Supervisors</a>
-                </li>
-                <li> 
-                    <a href="thesis_type.php">Thesis Type</a>
-                </li>
-            </ul>
-        </div>
-    <div class="container-fluid">
-        <h1 style="text-align: center;">Welcome to ethesis</h1>
-        
-        
-        <div class="container">
-            <h2 style="text-align:center;">Browse by Supervisors</h2>
-            <p>Please select a value to browse from the list below.</p>
+<body>  
+<div class="container">
+        <h2 style="text-align:center;">Browse by Supervisors</h2>
+        <p>Please select a value to browse from the list below.</p>
 
+    <div class="box">
+        <ul class="list-group-item">
             <?php 
                 echo "<ul>";
                 $res1=$con->query("select distinct supervisors from publication;");
@@ -67,14 +59,16 @@ include('include/header.php');
                 }
                 echo "</ul>";
             ?>
+        </ul>
+    </div></div>
+    <br><br><br>
+</div>
 
-        </div>
-      <br>
-    </div>
+<div class="foot">
 <?php
  include("include/footerstrip.php");
  ?>
+</div>
 <script type="text/javascript" src="js/bootstrap.js"></script>
-
 </body>
 </html>
