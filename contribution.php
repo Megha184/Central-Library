@@ -12,7 +12,7 @@ include("include/header.php");
     <meta name="page_type" content="np-template-header-footer-from-plugin">
     <title>Contribution</title>
     <link rel="stylesheet" href="css/nicepage.css" media="screen">
-<link rel="stylesheet" href="css/contribution.css" media="screen">
+    <link rel="stylesheet" href="css/contribution.css" media="screen">
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
     <meta name="generator" content="Nicepage 3.23.2, nicepage.com">
@@ -142,10 +142,6 @@ c0-7.4,3.4-18.8,18.8-18.8h13.8v15.4H75.5z"></path></svg></span>
         </div>
       </div>
     </section>
-    
-    
-    
-   
   </body>
 </html>
 <?php
