@@ -1,6 +1,6 @@
 
 <?php 
-include('comman/connect.php');
+include('../comman/connect.php');
 session_start();
 if(isset($_SESSION['user'])){
     $user_ses=$_SESSION['user'];

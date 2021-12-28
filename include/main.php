@@ -33,8 +33,6 @@ $data=mysqli_fetch_array($con->query("select * from registration where email='$u
 </head>
 <body>
 <!--footer-->
-
-
-  
 </body>
 </html>
+

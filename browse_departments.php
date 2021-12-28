@@ -45,9 +45,9 @@ include('include/eThesisBanner.php');
                         <td>Action</td>
                     </tr>
                     <?php 
-                    $thesis_types=$_REQUEST['thesis_types'];
+                    $departments=$_REQUEST['departments'];
 
-                    $res=$con->query("select publication_id,departments,subject,thesis_types,date_upload,supervisors,year,date_modify from publication where thesis_types='$thesis_types'");
+                    $res=$con->query("select publication_id,departments,subject,thesis_types,date_upload,supervisors,year,date_modify from publication where departments='$departments'");
                         $i=1;
                         while($row=mysqli_fetch_array($res))
                         {

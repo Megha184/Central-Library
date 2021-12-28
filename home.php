@@ -90,7 +90,7 @@ $data=mysqli_fetch_array($result);
                 ?>
 			</div>
 			<div class="three">News</div>
-			<div class="four">Currnet News Counter</div>
+			<div class="four">Current News Counter</div>
 			<div class="clear"></div>
 			</a>
 		</div>

@@ -2,6 +2,7 @@
 include('comman/connect.php');
 include('include/main.php');
 include('include/header.php');
+include('include/eThesisBanner.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -52,25 +53,6 @@ tr:nth-child(even) {
 </style>
 </head>
 <body>
-    <div class="menu">
-            <ul class="ep_tm_menu"> 
-                <li>
-                    <a href="thesis.php">All</a>
-                </li>
-                <li>
-                    <a href="thesis_year.php">Year</a>
-                </li>
-                <li>
-                    <a href="thesis_subject.php">Subject</a>
-                </li>
-                <li>
-                    <a href="thesis_supervisors.php">Supervisors</a>
-                </li>
-                <li> 
-                    <a href="thesis_type.php">Thesis Type</a>
-                </li>
-            </ul>
-    </div>
     <div class="container-fluid">
         
         <div class="container">
@@ -119,12 +101,9 @@ tr:nth-child(even) {
                   echo "</tr>";
                   
                 echo "</table>";
-
-
-                
                 }
           ?>
-
+          <br><br><br>
         </div>
 
     </div>

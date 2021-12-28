@@ -1,7 +1,7 @@
 <?php
-include("../include/header.php");
+include("../Site1/include/main.php");
 include("../comman/connect.php");
-include("../include/main.php");
+include("../include/header.php");
 ?>
 <html style="font-size: 16px;">
   <head>

@@ -2,6 +2,7 @@
 include('comman/connect.php');
 include('include/main.php');
 include('include/header.php');
+include('include/eThesisBanner.php');
 if(isset($_SESSION['sesuser'])){
     $user_ses=$_SESSION['sesuser'];
 }
@@ -9,6 +10,7 @@ else
 {
     echo"<script>window.location.href='SignIn.php';</script>";	
 }
+
 ?>
 <style type="text/css">
 #page_head
@@ -122,16 +124,29 @@ else
 {
     background: #f5f5f5;
 }
-</style>
-<div id="page_head">
-	<a href="index">Home</a> / Upload Thesis
-</div>
 
+.menu{
+    width: 100%;
+    height: 50px;
+    color: blue;
+    background: black;
+
+}
+
+.menu li{
+    float: left;
+    padding: 10px 20px 10px 20px;
+    list-style: none;
+}
+
+.tr{font-weight: bold; background: #eee;}
+</style>
+<center><div class="page_title">Upload Your Thesis</div></center>
 <div class="container page_details backbox">
 	<div class="row">
 		<form role="form" action="#" method="post" enctype="multipart/form-data">
 		<div class="col-sm-12">
-			<div class="page_title">Upload Your Thesis</div>
+
 			<div class="contact_form">
 				<div class="row">
 					<div class="form-group col-sm-6">
@@ -139,21 +154,28 @@ else
 						<input type="text" class="form-control input" name="regno" placeholder="Enter Registration Number..." required value="" minlength="12" maxlength="12">
 					</div>
 					<div class="form-group col-sm-6">
-						<label for="name">Thesis Title</label>
-						<input type="text" class="form-control input" name="thesis_title" placeholder="Enter Thesis Name..." required value="">
+						<label for="name">Department</label>
+						<select class="form-control input" name="department" required>
+						    <option value="none" selected disabled hidden>Select department</option>
+                            <option value="Chemistry">Department of Chemistry</option>
+							<option value="Civil Engineering">Department of Civil Engineering</option>
+							<option value="Computer Science and Engineering">Department of Computer Science and Engineering</option>
+							<option value="Electrical Engineering">Department of Electrical Engineering</option>
+							<option value="Electronics and Communication Engineering">Department of Electronics and Communication Engineering</option>
+                            <option value="Humanities, Social Sciences and Management">Department of Humanities and Social Sciences</option>
+                            <option value="Mathematics">Department of Mathematics</option>
+							<option value="Mechanical Engineering">Department of Mechanical Engineering</option>
+                            <option value="Metallurgical and Materials Engineering">Department of Metallurgical and Materials Engineering</option>
+                            <option value="Physics">Department of Physics</option>
+                            <option value="Production and Industrial Engineering">Department of Production and Industrial Engineering</option>
+						</select>
 					</div>
 					
 				</div>
 				<div class="row">
 					<div class="form-group col-sm-6">
-						<label for="name">Department</label>
-						<select class="form-control input" name="department" required>
-							<option value="UG(B.Tech)">UG(B.Tech)</option>
-							<option value="M.Tech.">M.Tech.</option>
-							<option value="M.Sc.">M.Sc.</option>
-							<option value="MCA">MCA</option>
-							<option value="PhD">PhD</option>
-						</select>
+						<label for="name">Thesis Title</label>
+						<input type="text" class="form-control input" name="thesis_title" placeholder="Enter Thesis Name..." required value="">
 					</div>
 					<div class="form-group col-sm-6">
 						<label for="name">Author Name</label>
@@ -167,7 +189,7 @@ else
 						<input type="text" class="form-control input" name="subject" placeholder="Enter Subject..." required value="">
 					</div>
 					
-					<div class="form-group col-sm-6">
+					<!-- <div class="form-group col-sm-6">
 						<label for="name">Branch</label>
 						<select class="form-control input" name="Branch" required>
 						<option value="Chemistry">Chemistry</option>
@@ -183,24 +205,22 @@ else
                 <option value="Mechanical Engineering">Mechanical Engineering</option>
                 <option value="Humanities,Social Science and Management">Humanities,Social Science and Management</option>
 						</select>
-					</div>
-				</div>
+					</div> -->
 				<div class="row">
 					<div class="form-group col-sm-6">
 						<label for="name">Thesis Types</label>
 						<input type="text" class="form-control input" name="thesis" placeholder="Enter Thesis Types..." required value="">
 					</div>
+				</div>
+				<div class="row">
 					<div class="form-group col-sm-6">
 						<label for="name">Supervisors</label>
 						<input type="text" class="form-control input" name="supervisors" placeholder="Enter Supervisors..." required value="">
 					</div>
-					
-				</div>
-				<div class="row">
 					<div class="form-group col-sm-6">
 						<label for="name">Year</label>
 						<select class="form-control input" name="toyear" required>
-							<option value="">Select Year..</option>
+							<option value="none" selected disabled hidden>Select Year</option>
 							<?php 
 								for ($i=2012; $i <=2030 ; $i++) { ?>
 									<option value='<?php echo $i;?>'><?php echo $i;?></option>
@@ -209,36 +229,31 @@ else
 						</select>
 
 					</div>
-					<div class="form-group col-sm-6">
-						<label for="name">File Upload<p style="color:red;float: right;padding-left: 20px; margin: 0px;">file name without special characters and space</p></label>
-						<input type="file" class="form-control input" accept="application/pdf" name="file" placeholder="Enter File Upload..." required value="">
-					</div>
 				</div>
 				<div class="row">
+					<div class="form-group col-sm-6">
+						<label for="name">File Upload<p style="color:red;float: right;padding-left: 20px; margin: 0px;">File name without special characters and space</p></label>
+						<input type="file" class="form-control input" accept="application/pdf" name="file" placeholder="Enter File Upload..." required value="">
+					</div>
 					<div class="form-group col-sm-12">
 						<label for="name">Description</label>
 						<textarea type="text" class="form-control input" name="Description" placeholder="Enter Name..." required value=""></textarea>
 					</div>
 				</div>
-				
-				<div class="row">
-					<div class="form-group col-sm-4">
-						<label for="name"></label>
-						<input type="submit" class="form-control btn btn-primary input_batt" name="save" value="Submit">
-					</div>
-				</div>		
 			</div>
 		</div>		
 		</form>
 	</div>
+	<center><input type="submit" class="form-control btn btn-primary input_batt" name="save" value="Submit"></center>
+</div>
 </div>
 
 
-
+<div class="footer">
 <?php
  include("include/footerstrip.php");
  ?>
-
+</div>
 
 
 <script type="text/javascript" src="js/bootstrap.js"></script>

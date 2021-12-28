@@ -121,64 +121,45 @@ include('include/eThesisBanner.php');
     background: black;
 
 }
-.menu,li{
+
+.menu li{
     float: left;
     padding: 10px 20px 10px 20px;
-    text-decoration: none;
     list-style: none;
+}
+
+.box{
+    width:50%;
+    margin:auto;
+    /* display:flex;
+    justify-content: center; */
 }
 </style>
 </head>
 <body>
 <div class="container">
-            <h1 style="text-align:center;"><br>Uploaded Thesis<br></h1>
-</div>
-        <div class="container backbox">
-        <div class="row">
-            <table class="table table2" border="1">
-                <tr class="tr" align='center'>
-                    <td>Publication Id</td>
-                    <td>Department</td>
-                    <td>Subject</td>
-                    <td>Superviser</td>
-                    <td>Type</td>
-                    <td>Year</td>
-                    <td>Date</td>
-                    <td>Date Of Modify</td>
-                    <td>Action</td>
-                </tr>
-                <?php 
-                
-
-                $res=$con->query("select publication_id,departments,subject,thesis_types,date_upload,supervisors,year,date_modify from publication");
-                    $i=1;
-                    while($row=mysqli_fetch_array($res))
-                    {
-                        $id=$row['publication_id'];
-                        echo "<tr>";
-                            echo "<td align='center'>".$row['publication_id']."</td>";
-                            echo "<td align='center'>".$row['departments']."</td>";
-                            //echo "<td align='center'>".$row['thesis_title']."</td>";
-                            echo "<td align='center'>".$row['subject']."</td>";
-                            echo "<td align='center'>".$row['supervisors']."</td>";
-                            echo "<td align='center'>".$row['thesis_types']."</td>";
-                            echo "<td align='center'>".$row['year']."</td>";
-                            echo "<td align='center'>".$row['date_upload']."</td>";
-                            echo "<td align='center'>".$row['date_modify']."</td>";
-                            echo "<td align='center'><a href='show_publication.php?id=".$id."'>view</a></td>";
-                        echo "</tr>";
-                    }
-                 ?>
-            </table>
-        </div>
-    </div><br><br>
+            <h2 style="text-align:center;">Browse by Department</h2>
+            <p>Please select a value to browse from the list below.</p>
+    <div class="box">
+        <ul class="list-group-item">
+            <?php 
+                echo "<ul>";
+                $res1=$con->query("select distinct departments from publication;");
+                while($row=mysqli_fetch_array($res1))
+                {
+                    $reg=$row['departments'];
+                    echo "<li>";
+                    echo "<a href='browse_departments.php?departments=".$reg."'>".$reg."</a>";
+                    echo "</li>";
+                }
+                echo "</ul>";
+            ?>
+        </ul>
+    </div><br><br><br>
 </div>
 
-    
-<?php
- include("include/footerstrip.php");
- ?>
-<script type="text/javascript" src="js/bootstrap.js"></script>
-
+    <?php
+    include("include/footerstrip.php");?>
+   <script type="text/javascript" src="js/bootstrap.js"></script>
 </body>
 </html>

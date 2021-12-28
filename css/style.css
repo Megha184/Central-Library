@@ -699,9 +699,11 @@ button {
 }
 .card-parent :hover {
   transform: scale(1.1);
+    transition: 1.5s;
 }
 .card :hover {
-  transform: scale(1);
+  transform: scale(1.1);
+    transition: 1.5s;
 }
 /* &:nth-child(2) {
     margin: 20px 0px;
