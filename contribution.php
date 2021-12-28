@@ -1,6 +1,6 @@
-
 <?php
 include("include/main.php");
+include("comman/connect.php");
 include("include/header.php");
 ?>
 <html style="font-size: 16px;">
@@ -10,9 +10,9 @@ include("include/header.php");
     <meta name="keywords" content="Meet Our Team">
     <meta name="description" content="">
     <meta name="page_type" content="np-template-header-footer-from-plugin">
-    <title>Home</title>
-    <link rel="stylesheet" href="nicepage.css" media="screen">
-<link rel="stylesheet" href="Home.css" media="screen">
+    <title>Contribution</title>
+    <link rel="stylesheet" href="css/nicepage.css" media="screen">
+<link rel="stylesheet" href="css/contribution.css" media="screen">
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
     <meta name="generator" content="Nicepage 3.23.2, nicepage.com">
@@ -24,12 +24,11 @@ include("include/header.php");
 		"@type": "Organization",
 		"name": ""
 }</script>
-
     <meta name="theme-color" content="#478ac9">
     <meta property="og:title" content="Home">
     <meta property="og:type" content="website">
   </head>
-  <body data-home-page="Home.html" data-home-page-title="Home" class="u-body">
+  <body data-home-page="contribution.html" data-home-page-title="Home" class="u-body">
     <section class="u-align-center u-clearfix u-grey-10 u-section-1" id="carousel_1cec">
       <div class="u-clearfix u-sheet u-sheet-1">
         <h1 class="u-text u-text-default u-text-palette-2-base u-text-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Meet Our Team</h1>
@@ -37,7 +36,7 @@ include("include/header.php");
           <div class="u-repeater u-repeater-1">
             <div class="u-align-center u-container-style u-list-item u-radius-15 u-repeater-item u-shape-round u-white u-list-item-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">
               <div class="u-container-layout u-similar-container u-container-layout-1">
-                <img class="u-image u-image-circle u-preserve-proportions u-image-1" src="images/1613479896521.jpg" alt="" data-image-width="800" data-image-height="800">
+                <img class="u-image u-image-circle u-preserve-proportions u-image-1" src="image/Divyanshi.jpg" alt="" data-image-width="800" data-image-height="800">
                 <h4 class="u-text u-text-2">Divyanshi Agarwal</h4>
                 <p class="u-text u-text-body-color u-text-3">Pursuing Masters Of Computer Applications.<br>
                   <br>Contact: 2019PGCACA45@nitjsr.ac.in
@@ -63,7 +62,7 @@ c0-7.4,3.4-18.8,18.8-18.8h13.8v15.4H75.5z"></path></svg></span>
             </div>
             <div class="u-align-center u-container-style u-list-item u-radius-15 u-repeater-item u-shape-round u-white u-list-item-2" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">
               <div class="u-container-layout u-similar-container u-container-layout-2">
-                <img class="u-image u-image-circle u-preserve-proportions u-image-2" src="images/1609656384368.jpg" alt="" data-image-width="800" data-image-height="800">
+                <img class="u-image u-image-circle u-preserve-proportions u-image-2" src="image/Megha.jpg" alt="" data-image-width="800" data-image-height="800">
                 <h4 class="u-text u-text-5">Megha Agarwal</h4>
                 <p class="u-text u-text-body-color u-text-6"> Pursuing Masters Of Computer Applications.<br>
                   <br>Contact: 2019PGCACA54@nitjsr.ac.in
@@ -89,7 +88,7 @@ c0-7.4,3.4-18.8,18.8-18.8h13.8v15.4H75.5z"></path></svg></span>
             </div>
             <div class="u-align-center u-container-style u-list-item u-radius-15 u-repeater-item u-shape-round u-white u-list-item-3" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">
               <div class="u-container-layout u-similar-container u-container-layout-3">
-                <img class="u-image u-image-circle u-preserve-proportions u-image-3" src="images/kapil.jpg" alt="" data-image-width="350" data-image-height="350">
+                <img class="u-image u-image-circle u-preserve-proportions u-image-3" src="image/kapil.jpg" alt="" data-image-width="350" data-image-height="350">
                 <h4 class="u-text u-text-8">Kapil Kumar</h4>
                 <p class="u-text u-text-body-color u-text-9"> Pursuing Masters Of Computer Applications.<br>
                   <br>Contact: 2019PGCACA51@nitjsr.ac.in
@@ -115,7 +114,7 @@ c0-7.4,3.4-18.8,18.8-18.8h13.8v15.4H75.5z"></path></svg></span>
             </div>
             <div class="u-align-center u-container-style u-list-item u-radius-15 u-repeater-item u-shape-round u-white u-list-item-4" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">
               <div class="u-container-layout u-similar-container u-container-layout-4">
-                <img class="u-image u-image-circle u-preserve-proportions u-image-4" src="images/abhilasha.jpg" alt="" data-image-width="800" data-image-height="800">
+                <img class="u-image u-image-circle u-preserve-proportions u-image-4" src="image/Abhilasha.jpg" alt="" data-image-width="800" data-image-height="800">
                 <h4 class="u-text u-text-11"> Abhilasha Pathak</h4>
                 <p class="u-text u-text-body-color u-text-12"> Pursuing Masters Of Computer Applications.<br>
                   <br>Contact: 2019PGCACA02@nitjsr.ac.in
@@ -146,16 +145,9 @@ c0-7.4,3.4-18.8,18.8-18.8h13.8v15.4H75.5z"></path></svg></span>
     
     
     
-    <section class="u-backlink u-clearfix u-grey-80">
-      <a class="u-link" href="https://nicepage.com/website-templates" target="_blank">
-        <span>Website Templates</span>
-      </a>
-      <p class="u-text">
-        <span>created with</span>
-      </p>
-      <a class="u-link" href="https://nicepage.com/" target="_blank">
-        <span>Website Builder Software</span>
-      </a>. 
-    </section>
+   
   </body>
 </html>
+<?php
+include("include/footerstrip.php");
+?>
