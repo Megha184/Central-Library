@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 16, 2021 at 12:31 PM
--- Server version: 10.4.18-MariaDB
--- PHP Version: 8.0.5
+-- Generation Time: Dec 29, 2021 at 08:10 PM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 7.4.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -251,7 +251,7 @@ CREATE TABLE `publication` (
   `thesis_title` varchar(250) NOT NULL,
   `reg_no` varchar(12) NOT NULL,
   `authors` varchar(50) NOT NULL,
-  `departments` varchar(50) NOT NULL,
+  `departments` varchar(100) NOT NULL,
   `branch` varchar(100) NOT NULL,
   `subject` varchar(100) NOT NULL,
   `supervisors` varchar(50) NOT NULL,
@@ -268,15 +268,17 @@ CREATE TABLE `publication` (
 --
 
 INSERT INTO `publication` (`publication_id`, `thesis_title`, `reg_no`, `authors`, `departments`, `branch`, `subject`, `supervisors`, `description`, `thesis_types`, `file_uploaded`, `year`, `date_upload`, `date_modify`) VALUES
-(1, '', '2019PGCACA51', 'KAPIL KUMAR', 'UG(B.Tech)', 'Chemistry', 'AI', 'Azad sir', 'wertyuiop', 'basic', 'wertyui', '2019', '29-Aug-2021', '29-Aug-2021'),
-(2, '', '2019PGCACA51', 'KAPIL KUMAR', 'M.Sc.', 'Electronics and Communication Engineering', 'Networking', 'Azad sir', 'this thesis on networking', 'basic', 'wertyui', '2021', '29-Aug-2021', '29-Aug-2021'),
-(3, '', '2019PGCACA51', 'KAPIL KUMAR', 'MCA', 'Computer Applications', 'Networking', 'Azad sir', 'The admission to the under graduate programmes is made on the performance in the class 12/equivalent qualifying examination and in the JEE (Main). The Joint Seat Allocation Authority (JoSAA) / Central Seat Allocation Board (CSAB) allocates the seats for Under Graduate Programmes through Common Counseling process.For general guidelines of B.Tech Admissions and documents required,', 'basic', '', '2021', '29-Aug-2021', '29-Aug-2021'),
-(4, '', '2019PGCACA51', 'KAPIL KUMAR', 'UG(B.Tech)', 'Chemistry', 'Networking', 'Azad sir', 'this is thesis', 'basic', '10794HR Interview Questions by InterviewBit.pdf', '2021', '29-Aug-2021', '29-Aug-2021'),
-(5, '', '2019PGCACA51', 'Shivam Gupta', 'M.Sc.', 'Electrical Engineering', 'AI', 'Azad sir', 'No Research scholar shall be permitted to accept or hold any appointment, paid or otherwise or receive any emoluments, salary, stipend or any other scholarship during the tenure. However, Sponsored Scholar (SS) will not get any Research Scholarship.', 'basic', '28699HR Interview Questions by InterviewBit.pdf', '2021', '29-Aug-2021', '29-Aug-2021'),
-(6, '', '2019PGCACA51', 'KAPIL KUMAR', 'MCA', 'Metallurgical and Materials Engineering', 'Networking', 'Azad sir', 'h', 'basic', '23850369501N.pdf', '2022', '29-Aug-2021', '29-Aug-2021'),
-(7, '', '2019PGCACA51', 'KAPIL KUMAR', 'UG(B.Tech)', 'Chemistry', 'Networking', 'Azad sir', 'The admission to the under graduate programmes is made on the performance in the class 12/equivalent qualifying examination and in the JEE (Main). The Joint Seat Allocation Authority (JoSAA) / Central Seat Allocation Board (CSAB) allocates the seats for Under Graduate Programmes through Common Counseling process.For general guidelines of B.Tech Admissions and documents required,', 'basic', '', '2019', '29-Aug-2021', '29-Aug-2021'),
-(8, '', '2019PGCACA51', 'KAPIL KUMAR', 'M.Tech.', 'Computer Applications', 'Networking', 'Azad sir', 'The admission to the under graduate programmes is made on the performance in the class 12/equivalent qualifying examination and in the JEE (Main). The Joint Seat Allocation Authority (JoSAA) / Central Seat Allocation Board (CSAB) allocates the seats for Under Graduate Programmes through Common Counseling process.For general guidelines of B.Tech Admissions and documents required,', 'basic', 'ticket.njmLQMdhM6sJJImFUe6yIQFKvT5ZEiquqtjXx8FbVnu0wL3iSnxGrPhVk9S1UEnAvxZVwEaEGW3kxauLkK9NfX7Bgil3Anz7L.pdf', '2021', '29-Aug-2021', '29-Aug-2021'),
-(9, '', '2019PGCACA51', 'KAPIL KUMAR1', 'UG(B.Tech)', 'Computer Applications', 'Networking', 'Azad sir', 'The admission to the under graduate programmes is made on the performance in the class 12/equivalent qualifying examination and in the JEE (Main). The Joint Seat Allocation Authority (JoSAA) / Central Seat Allocation Board (CSAB) allocates the seats for Under Graduate Programmes through Common Counseling process.For general guidelines of B.Tech Admissions and documents required,', 'basic', '22881369501N.pdf', '2024', '29-Aug-2021', '29-Aug-2021');
+(1, '', '2019PGCACA51', 'KAPIL KUMAR', 'Department of Computer Science Engineering', 'Chemistry', 'AI', 'Azad sir', 'wertyuiop', 'Basic', 'wertyui', '2019', '29-Aug-2021', '29-Aug-2021'),
+(2, '', '2019PGCACA51', 'KAPIL KUMAR', 'Department of Civil Engineering', 'Electronics and Communication Engineering', 'Networking', 'Azad sir', 'this thesis on networking', 'basic', 'wertyui', '2021', '29-Aug-2021', '29-Aug-2021'),
+(3, '', '2019PGCACA51', 'KAPIL KUMAR', 'Department of Electrical Engineering', 'Computer Applications', 'Networking', 'Azad sir', 'The admission to the under graduate programmes is made on the performance in the class 12/equivalent qualifying examination and in the JEE (Main). The Joint Seat Allocation Authority (JoSAA) / Central Seat Allocation Board (CSAB) allocates the seats for Under Graduate Programmes through Common Counseling process.For general guidelines of B.Tech Admissions and documents required,', 'basic', '', '2021', '29-Aug-2021', '29-Aug-2021'),
+(4, '', '2019PGCACA51', 'KAPIL KUMAR', 'Department of Electronics and Communication Engineering', 'Chemistry', 'Networking', 'Azad sir', 'this is thesis', 'basic', '10794HR Interview Questions by InterviewBit.pdf', '2021', '29-Aug-2021', '29-Aug-2021'),
+(5, '', '2019PGCACA51', 'Shivam Gupta', 'Department of Mechanical Engineering', 'Electrical Engineering', 'AI', 'Azad sir', 'No Research scholar shall be permitted to accept or hold any appointment, paid or otherwise or receive any emoluments, salary, stipend or any other scholarship during the tenure. However, Sponsored Scholar (SS) will not get any Research Scholarship.', 'basic', '28699HR Interview Questions by InterviewBit.pdf', '2021', '29-Aug-2021', '29-Aug-2021'),
+(6, '', '2019PGCACA51', 'KAPIL KUMAR', 'Department of Metallurgical and Materials Engineering', 'Metallurgical and Materials Engineering', 'Networking', 'Azad sir', 'h', 'basic', '23850369501N.pdf', '2022', '29-Aug-2021', '29-Aug-2021'),
+(7, '', '2020PGCACA05', 'Shabbir Alam', 'Department of Production and Industrial Engineering', '', 'Enhance Quality', 'Alekha Sir', 'I think computer viruses should count as life ... I think it says something about human nature that the only form of life we have created so far is purely destructive. We\'ve created life in our own image.', 'Medium', 'Something.pdf', '2020', '26-Dec-2021', '27-Dec-2021'),
+(8, '', '2020PGCACA05', 'Shabbir Alam', 'Department of Chemistry', '', 'Quantum Number', 'Pradhan Sir', 'I know there\'s a proverb which that says \'To err is human,\' but a human error is nothing to what a computer can do if it tries.', 'Advance', 'quantum.pdf', '2021', '26-Dec-2021', '27-Dec-2021'),
+(9, '', '2020PGCACA05', 'Shabbir Alam', 'Department of Mathematics', '', 'Hyper Parabola', 'Kundu Sir', 'I am not the only person who uses his computer mainly for the purpose of diddling with his computer.', 'Advance', 'Hyper.pdf', '2021', '26-Dec-2021', '27-Dec-2021'),
+(10, '', '2020PGCACA05', 'Shabbir Alam', 'Department of Physics', '', 'Time Series Analysis', 'Rafi Sir', 'No one messes around with a nerd’s computer and escapes unscathed.', 'Advance', 'Analysis.pdf', '2021', '26-Dec-2021', '27-Dec-2021'),
+(11, '', '2020PGCACA05', 'Shabbir Alam', 'Department of Humanities and Social Sciences', '', 'Social Activity', 'Shaw Sir', 'For most people, home we represented by four walls and a roof. Not for Noa. She preferred a motherboard to a mother, a keyboard to house keys. Nothing was more comforting than the hum of a spinning hard drive.', 'Basic', 'Activity.pdf', '2021', '26-Dec-2021', '27-Dec-2021');
 
 -- --------------------------------------------------------
 
@@ -373,7 +375,8 @@ ALTER TABLE `newsmagazines`
 -- Indexes for table `publication`
 --
 ALTER TABLE `publication`
-  ADD PRIMARY KEY (`publication_id`);
+  ADD PRIMARY KEY (`publication_id`),
+  ADD KEY `departments` (`departments`);
 
 --
 -- Indexes for table `registration`
@@ -431,7 +434,7 @@ ALTER TABLE `newsmagazines`
 -- AUTO_INCREMENT for table `publication`
 --
 ALTER TABLE `publication`
-  MODIFY `publication_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `publication_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `registration`
